@@ -18,7 +18,7 @@
     <label for="name">What's your name?</label>
     <input type="text" ng-model="name" ng-init="name='Ashley'" placeholder="What is your name?">
     <br>
-    <h1>My name is: {{name}}</h1>
+    <h3>My name is: {{name}}</h3>
 
 
     <div class="dropdown">
@@ -32,6 +32,60 @@
     </div>
     <br>
     <h3>I love {{picker}}</h3>
+    <br>
+
+    {{3.14159265359 | currency : "€" }}
+
+    <br>
+
+    <label for="say-something">Please say something...</label>
+    <input type="text" ng-model="say" placeholder="Say something...">
+    <br>
+    <h2>Yelling: {{say | uppercase }}</h2>
+    <h4>Whispering: {{say | lowercase}}</h4>
+
+    <br>
+    {{3.14159265359 | number:3}}
+    <br>
+    {{3.14159265359 | number:6}}
+    <br>
+    {{3.14159265359 | number:1}}
+    <br>
+    <br>
+    <br>
+
+    <div class="dropdown">
+    <label for="name">How many digits of PI?</label>
+      <select class="selectpicker" ng-model="pi">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+    </div>
+    <br>
+    <h4>Here you go, the first {{pi}} digits of PI!</h4>
+    <br>
+    {{3.14159265359 | number: pi}}
+    <br>
+    <br>
+
+    <h3>Super Useful Tip Calculator</h3>
+    <label for="meal-cost">How much did your meal cost?</label>
+    <input type="number" ng-model="meal">
+    <div class="dropdown">
+      <label for="tip">How much do you want to tip?</label>
+      <select class="selectpicker" ng-model="tip">
+        <option value="15">15%</option>
+        <option value="18">18%</option>
+        <option value="20">20%</option>
+      </select>
+    </div>
+
+    <h4>Subtotal: {{meal/100*tip+meal | number: 2 | currency:"$"}}</h4>
+    <h4>Tip: {{meal/100*tip | number: 2 | currency:"$"}}</h4>
+
+
+
 
 
 

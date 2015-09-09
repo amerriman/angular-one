@@ -1,0 +1,14 @@
+What does ng-model do?
+What is "dirty checking"?
+Find a way to set the initial value of "name" as "BoJack" (without writing a controller).
+What are those {{ }} expressions? Are they Handlebars?
+Explain what two-way data binding is.
+BONUS: Research the $digest loop
+
+
+What are Angular expressions? How do they compare to tags from templating engines you've used before?
+What happens when you write invalid code in an expression? What type of error do you get?
+What are Angular filters? Describe what a filter does and then name four built-in filters, including one that we haven't used yet.
+What's the syntax for filters?
+Can you use more than one filter?
+We'll soon see how to create custom filters. What is a use case for a custom filter?
