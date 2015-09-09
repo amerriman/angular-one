@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
   <head>
     <meta charset="utf-8">
-    <title>Untitled</title>
-    
+    <title>{{ greeting }} World</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    
+
+    <h1>Angular Nation</h1>
+    <br>
+    <p>{{2 * 6}}<p>
+    <br>
+    <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
+    <p>{{ greeting }} world!</p>
+    <br>
+    <label for="name">What's your name?</label>
+    <input type="text" ng-model="name" ng-init="name='Ashley'" placeholder="What is your name?">
+    <br>
+    <h1>My name is: {{name}}</h1>
+
+
+    <div class="dropdown">
+    <label for="name">What do you love?</label>
+      <select class="selectpicker" ng-model="picker">
+        <option>cats</option>
+        <option>dogs</option>
+        <option>cats and dogs</option>
+        <option>nothing.</option>
+      </select>
+    </div>
+    <br>
+    <h3>I love {{picker}}</h3>
+
+
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/vanilla.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
   </body>
 </html>
