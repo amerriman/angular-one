@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ greeting }} World</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <div ng-controller="MyFirstController">
+        <h3>{{name}}</h3>
+
+        <h3>My name is: {{name}}</h3>
+        <input ng-model="name" type="text" placeholder="What is your name">
+    </div>
+
+    <br>
+    <br>
+
+    <div ng-controller="ExercisesController">
+        <p>My favorite color is {{favColor}}</p>
+
+        <label for="guess">How many seconds are in a century?</label>
+
+        <button ng-click="secondsInACentury()" class="btn btn-default">Find Out!</button>
+
+        <p>{{seconds | number}}</p>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

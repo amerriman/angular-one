@@ -1,0 +1,7 @@
++ ng-app = bootstraps angular
++ ng-controller = defines where (start/end) the controller affects or lives in the HTML; links back to the controller in the modules.
++ ng-click = click event (like 'onClick') in jQuery
++ ng-repeat = like a forEach loop - used to iterate
++ $scope = binds values/variables to the view.
++ SETTING/GETTING an angular module = angular code lives in the view/model
++ CREATING a controller = defines what gets bound to the view via $scope.

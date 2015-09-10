@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Sample</title>
+  </head>
+  <body>
+
+    <div ng-controller="mainController">
+    <h1>{{greeting}}</h1>
+    <button ng-click="excite()">CLICK ME</button>
+    </div>
+
+    <div ng-controller="secondaryController">
+    <h1>{{greet}}</h1>
+    <ul ng-repeat="movie in movies | orderBy: '-title'">
+      <li>{{movie.title}}</li>
+    </ul>
+
+    <h2>Students</h2>
+    <ul ng-repeat="student in students | orderBy: reverse">
+      <li ng-if="student!='Ashley'">{{student}}</li>
+    </ul>
+
+<!-- This is messed up -->
+    <h2>Search Students</h2>
+    <input ng-model="name">
+    <ul ng-repeat="student in students | filter:name">
+      <!-- <li ng-if="name==student">{{student}}</li> -->
+      <li>{{student}}</li>
+    </ul>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/lecture.js"></script>
+
+  </body>
+</html>
