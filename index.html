@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>{{ greeting }} World</title>
@@ -83,10 +83,90 @@
 
     <h4>Subtotal: {{meal/100*tip+meal | number: 2 | currency:"$"}}</h4>
     <h4>Tip: {{meal/100*tip | number: 2 | currency:"$"}}</h4>
+    <br>
+    <br>
+<!--  -->
+    <div ng-controller="GreetingController">
 
+         <div>
+        {{greetings}}
+        </div>
 
+        <br>
+        <br>
 
+        <ul ng-repeat="name in names">
+          <li  >
+            {{name}}
+           </li>
+        </ul>
 
+        <br>
+        <br>
+
+        <ul>
+          <li ng-repeat="symbol in symbols">
+            {{symbol}}
+           </li>
+        </ul>
+
+        <ul ng-repeat="thing in things track by $index">
+          <li>
+            {{thing}}
+           </li>
+        </ul>
+
+        <ul ng-repeat="(key, value) in data">
+          <li>
+            {{key}}
+           </li>
+        </ul>
+
+    </div>
+
+        <div ng-show="3 + 4 == 5">
+          3 + 4 isn't 5, don't show
+        </div>
+
+        <div ng-show="3 + 4 == 7">
+          3 + 4 is 7, do show
+        </div>
+
+        <div ng-hide="3 + 4 == 5">
+            3 + 4 isn't 5, don't hide
+        </div>
+
+        <div ng-hide="3 + 4 == 7">
+          3 + 4 is 7, do hide
+        </div>
+        <br>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="password">Sign Up Page</label>
+                <input type="password" class="form-control" placeholder="Password" ng-model="password" ng-class="{red: password.length <= 5, green: password.length > 5}">
+                <p ng-class="{red: password.length <= 5, green: password.length > 5}">Your password is {{ password.length }} characters</p>
+            </div>
+            <div ng-show="password.length > 5">
+                <button type="submit" class="btn btn-default">Sign Up!</button>
+            </div>
+            <div ng-hide="password.length > 5">Password is invalid!</div>
+        </form>
+        <br>
+        <br>
+        <div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8</div>
+        <div ng-class="{highlight: 4 + 4 == 10}">4 + 4 = 10</div>
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+        <br>
+        <br>
 
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -94,5 +174,19 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/vanilla.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script>
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('GreetingController', ['$scope', function($scope) {
+            $scope.greetings = 'Hola!';
+            $scope.names = ["Harry", "Ron", "Hermione", "Sirius", "Hedwig", "Tonks"];
+            $scope.symbols = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
+            $scope.things = [1, 1, 2, 5, 6, 9, 9, 9];
+            $scope.data = {
+                drink: "beer",
+                food: "pizza",
+                study: "none"
+            }
+        }]);
+        </script>
   </body>
 </html>

@@ -1,1 +1,12 @@
 /* add custom styles */
+.highlight {
+  background-color: yellow;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

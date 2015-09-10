@@ -1,14 +1,14 @@
-What does ng-model do?
-What is "dirty checking"?
-Find a way to set the initial value of "name" as "BoJack" (without writing a controller).
-What are those {{ }} expressions? Are they Handlebars?
-Explain what two-way data binding is.
-BONUS: Research the $digest loop
+1 - What does ng-model do?
+2 - What is "dirty checking"?
+3 - Find a way to set the initial value of "name" as "BoJack" (without writing a controller).**DONE**
+4 - What are those {{ }} expressions? Are they Handlebars? - not Handlebars - they are the syntax, handlebars is a temlating program.
+5 - Explain what two-way data binding is. - The system of view and model working together to sync changes
+6 - BONUS: Research the $digest loop
 
 
-What are Angular expressions? How do they compare to tags from templating engines you've used before?
-What happens when you write invalid code in an expression? What type of error do you get?
-What are Angular filters? Describe what a filter does and then name four built-in filters, including one that we haven't used yet.
-What's the syntax for filters?
-Can you use more than one filter?
-We'll soon see how to create custom filters. What is a use case for a custom filter?
+7 - What are Angular expressions? How do they compare to tags from templating engines you've used before?
+8 - What happens when you write invalid code in an expression? What type of error do you get?
+9 - What are Angular filters? Describe what a filter does and then name four built-in filters, including one that we haven't used yet. currency, lowercase, uppercase, number, date, json, etc
+10 - What's the syntax for filters? - {{thing | filter: parameters}}
+11 - Can you use more than one filter? - yes, chain them with a |
+
