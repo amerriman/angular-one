@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp">
+  <head>
+    <meta charset="utf-8">
+    <title>World</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+
+    <h1>Ping Pong Scorekeeper</h1>
+
+    <div ng-controller="PingPong">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-3 box" ng-click="incrementScore()" ng-class="{lose: game.p2score > 10, win: game.p1score > 10, renew: game.p2reset === true}">
+                <p class="player">Player 1</p>
+                <p class="score">{{game.p1score}}</p>
+                <p class="serve" ng-hide="game.serve === 1">serving</p>
+            </div>
+
+            <div class="col-md-4 col-md-offset-1 box" ng-click="incrementScore2()" ng-class="{lose: game.p1score > 10, win: game.p2score > 10, renew: game.p2reset === true}">
+                <p class="player">Player 2</p>
+                <p class="score">{{game.p2score}}</p>
+                <p class="serve" ng-hide="game.serve === 0">serving</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-ms-2 col-md-offset-6">
+                <button class="btn btn-large btn-success" ng-click="reset()">Reset</button>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

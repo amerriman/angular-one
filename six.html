@@ -19,12 +19,27 @@
 
     <div ng-controller="ExercisesController">
         <p>My favorite color is {{favColor}}</p>
-
+        <br>
+        <br>
         <label for="guess">How many seconds are in a century?</label>
+        <!-- <button ng-click="secondsInACentury()" class="btn btn-default">Find Out!</button> -->
+        <h3 ng-scope="seconds">{{seconds | number}}</h3>
+        <br>
+        <!-- <h2>{{seconds}}</h2> -->
+        <br>
+        <h4>{{rightNow | date:'fullDate'}}</h4>
+        <br>
+        <button ng-click="pickRandomNumber()">Pick Random Number</button>
+        <h3>The number is: {{number}}</h3>
+        <br>
+        <br>
+        <label>Word Reverser</label>
+        <input type="text" class="form-control" ng-model="word" placeholder="Write a word...">
+        <br>
+        <button ng-click="reverseWord(word)" class="btn btn-default">Reverse!</button>
+        <h4>Your word is: {{word}}</h4>
 
-        <button ng-click="secondsInACentury()" class="btn btn-default">Find Out!</button>
-
-        <p>{{seconds | number}}</p>
+</div>
 
     </div>
 
