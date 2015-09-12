@@ -98,9 +98,22 @@ app.controller("contacts", function($scope){
     }
   ];
 
-  $scope.newContact = function(){
+  $scope.addContact = function(){
+    if($scope.newPerson.$valid){
+      var newInfo=
+        {
+          name: $scope.name,
+          email: $scope.email,
+          phone: $scope.phone,
+        };
+      $scope.contacts.push(newInfo);
+      // $scope.newPerson.$setPristine();
+      // $scope.newPerson.$setUntouched();
+      // $scope.newPerson.$setValidity();
 
-  }
+    }
+  };
+
 
 });
 
