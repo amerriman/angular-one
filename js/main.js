@@ -31,38 +31,20 @@ app.controller("PingPong", function($scope){
     p2score: 0,
     p1reset: true,
     p2reset: true,
-    // p1serveCount: 0,
-    // p2serveCount: 0,
-    // p1serve: 0,
-    // p2serve: 0,
     serveCount: 0,
     serve: 0
 
   };
 
-  $scope.serveTurn = function(){
-
-    if ($scope.game.serveCount === 3 || $scope.game.serveCount === 4 || $scope.game.serveCount === 7 || $scope.game.serveCount === 8){
-      $scope.game.serve = 1;
-    } else {
-      $scope.game.serve = 0;
-    }
-  };
 
   $scope.incrementScore = function(){
     $scope.game.p1score += 1;
     $scope.game.p1reset = false;
     $scope.game.p2reset = false;
     $scope.game.serveCount += 1;
-console.log($scope.game.serveCount, "inc1")
-    // if ($scope.game.serveCount === 3 || $scope.game.serveCount === 4 || $scope.game.serveCount === 7 || $scope.game.serveCount === 8){
-    //   $scope.game.serve = 1;
-    // } else {
-    //   $scope.game.serve = 0;
-    // }
+
     if($scope.game.serveCount === 4){
       $scope.game.serveCount = 0;
-      //$scope.game.serveCount += 1;
     }
     else if ($scope.game.serveCount === 3 || $scope.game.serveCount === 4){
       $scope.game.serve = 1;
@@ -76,15 +58,9 @@ console.log($scope.game.serveCount, "inc1")
     $scope.game.p1reset = false;
     $scope.game.p2reset = false;
     $scope.game.serveCount += 1;
-console.log($scope.game.serveCount, "inc2")
-    // if ($scope.game.serveCount === 3 || $scope.game.serveCount === 4 || $scope.game.serveCount === 7 || $scope.game.serveCount === 8){
-    //   $scope.game.serve = 1;
-    // } else {
-    //   $scope.game.serve = 0;
-    // }
+
     if($scope.game.serveCount === 4){
       $scope.game.serveCount = 0;
-      //$scope.game.serveCount += 1;
     }
     else if ($scope.game.serveCount === 3 || $scope.game.serveCount === 4){
       $scope.game.serve = 1;
@@ -100,6 +76,31 @@ console.log($scope.game.serveCount, "inc2")
     $scope.game.p2reset = true;
   };
 
+});
+
+
+app.controller("contacts", function($scope){
+  $scope.contacts = [
+    {
+      name: "Alice",
+      email: "Alice@wonderland.com",
+      phone: "123-456-7890"
+    },
+    {
+      name: "Jack",
+      email: "farmboy@beanstalk.com",
+      phone: "321-654-0987"
+    },
+    {
+      name: "Susie",
+      email: "cutie@que.com",
+      phone: "987-678-4321"
+    }
+  ];
+
+  $scope.newContact = function(){
+
+  }
 
 });
 
