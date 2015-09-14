@@ -71,3 +71,13 @@ h1 {
   background-color: #1E90FF;
 }
 
+.main-row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #F0F0F0;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+

@@ -113,9 +113,64 @@ app.controller("contacts", function($scope){
 
     }
   };
+});
+//end contacts
 
+app.controller("reddit", function($scope){
+  $scope.posts =[
+    {
+      title: "Fort Fun",
+      author: "The Ram",
+      description: "Blah blah blah beer.",
+      image: 'img/fortcollins.jpg',
+      date:'Mon Sep 14 2015 10:23pm',
+      votes: 3,
+      comments: 0
+    },
+    {
+      title: "Vermont",
+      author: "JimBob Smith",
+      description: "Hillbilly nonsense.",
+      image: 'img/Vermont.jpg',
+      date:'Sat Sep 12 2015 8:10am',
+      votes: 0,
+      comments: 0
+    },
+    {
+      title: "New York, NY",
+      author: "Veronica Princess",
+      description: "Fancy schmancy gravity schmavity.",
+      image: 'img/NYC.jpg',
+      date:'Fri Sep 11 2015 11:46am',
+      votes: -1,
+      comments: 0
+    }
+  ];
+
+  $scope.addPost = function(){
+    if($scope.newPost.$valid){
+      var newReddit =
+        {
+          title: $scope.title,
+          author: $scope.author,
+          description: $scope.description,
+          image: $scope.image,
+          date: Date.now(),
+          votes: 0,
+          comments: 0
+        };
+      $scope.posts.push(newReddit);
+
+    }
+  };
 
 });
+
+
+
+
+
+
 
 
 
