@@ -10,8 +10,39 @@
 
     <div ng-controller="reddit">
 
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Reddit Clone <span class="sr-only">(current)</span></a></li>
+
+                        <li ng-click="show = !show"><a><span class = 'glyphicon glyphicon-plus'></span> Submit Post </a></li>
+                        <li>
+                          <!--   <select class="dropdown" ng-model="selectedOrder" ng-options="option for option in options">
+                            </select> -->
+                            <select ng-model="sort" class="form-control">
+                                <option value="-votes">Votes</option>
+                                <option value="date">Date</option>
+                                <option value="title">Title</option>
+                            </select>
+
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" ng-model="searchText"class="form-control" placeholder="Search">
+                            </div>
+
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
     <!-- form -->
-        <form name="newPost">
+    <!-- <div class="form-section" ng-show="formDiv"> -->
+        <form name="newPost" ng-model="newPost" ng-show='show'>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="text" placeholder="Title" ng-model="title" required>
@@ -29,8 +60,10 @@
                 <input type="text" class="form-control" id="description" placeholder="Description" ng-model="description" required>
             </div>
 
-            <button type="submit" class="btn btn-success" ng-click="addPost()">Submit Post</button>
+            <button type="submit" class="btn btn-success" ng-click="addPost(); ; show=false" ng-disabled="newPost.$invalid" type="submit" class="btn btn-default">Submit Post</button>
         </form>
+    <!-- </div> -->
+
         <br>
         <br>
 
@@ -39,25 +72,17 @@
     <!-- end form -->
 <!-- ng-repeat="post in posts" -->
     <!-- content -->
-    <div class="content-wrapper" ng-repeat="post in posts | filter: search">
+    <div class="content-wrapper" ng-repeat="post in posts | filter: searchText | orderBy: sort">
         <div class="row main-row" >
             <div class="col-md-2">
                 <img src= "{{post.image}}" alt='picture' height="120px" width="150">
             </div>
 
             <div class="col-md-8 content">
-                <!-- <div > -->
-                    <h4>{{post.title}}</h4>
-                <!-- </div> -->
-                <!-- <div > -->
+                    <h4>{{post.title}} | <span ng-click='post.votes = post.votes + 1' class = "glyphicon glyphicon-arrow-up"></span>  <span ng-click='post.votes = post.votes - 1' class = "glyphicon glyphicon-arrow-down"></span> <span ng-class="{'red':post.votes < 0, 'green':post.votes > 0}"> {{post.votes}} </span></h4>
                     <h5>{{post.author}}</h5>
-                <!-- </div> -->
-                <!-- <div > -->
                     <p>{{post.description}}</p>
-                <!-- </div> -->
-                <!-- <div > -->
-                <h6>{{post.date | date : format : fullDate}} | {{post.comments}} comments | <span>add comment</span></h6>
-                <!-- </div> -->
+                <h6><span class= "glyphicon glyphicon-calendar"></span><span>{{post.date | amCalendar }} </span> | <span>{{post.comments.length}} comments</span> <span>| add comment</span></h6>
             </div>
         </div>
         <br>
@@ -75,6 +100,9 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

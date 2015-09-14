@@ -1,5 +1,10 @@
 
-var app = angular.module("firstApp", []);
+var app = angular.module("firstApp", ['angularMoment']);
+
+
+app.run(function(amMoment) {
+    amMoment.changeLocale('de');
+});
 
 app.controller("MyFirstController", function($scope){
   $scope.name = "Severus Snape";
@@ -123,27 +128,27 @@ app.controller("reddit", function($scope){
       author: "The Ram",
       description: "Blah blah blah beer.",
       image: 'img/fortcollins.jpg',
-      date:'Mon Sep 14 2015 10:23pm',
+      date: 1442705903000,
       votes: 3,
-      comments: 0
+      comments: []
     },
     {
       title: "Vermont",
       author: "JimBob Smith",
       description: "Hillbilly nonsense.",
       image: 'img/Vermont.jpg',
-      date:'Sat Sep 12 2015 8:10am',
+      date: 1442005103000,
       votes: 0,
-      comments: 0
+      comments: []
     },
     {
       title: "New York, NY",
       author: "Veronica Princess",
       description: "Fancy schmancy gravity schmavity.",
       image: 'img/NYC.jpg',
-      date:'Fri Sep 11 2015 11:46am',
+      date: 1442000103000,
       votes: -1,
-      comments: 0
+      comments: []
     }
   ];
 
@@ -157,12 +162,14 @@ app.controller("reddit", function($scope){
           image: $scope.image,
           date: Date.now(),
           votes: 0,
-          comments: 0
+          comments: []
         };
       $scope.posts.push(newReddit);
-
     }
   };
+
+  $scope.sort = "-votes"
+  // $scope.options = ['title', 'votes', 'date'];
 
 });
 
