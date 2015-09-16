@@ -1,5 +1,5 @@
 
-var app = angular.module("firstApp", ['angularMoment']);
+var app = angular.module("firstApp", ['angularMoment', 'ngAnimate']);
 
 
 app.run(function(amMoment) {

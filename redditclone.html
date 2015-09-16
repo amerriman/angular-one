@@ -72,7 +72,7 @@
     <!-- end form -->
 <!-- ng-repeat="post in posts" -->
     <!-- show content -->
-    <div class="content-wrapper" ng-repeat="post in posts | filter: searchText | orderBy: sort">
+    <div class="content-wrapper item" ngAnimate ng-repeat="post in posts | filter: searchText | orderBy: sort">
         <div class="row main-row" >
             <div class="col-md-2">
                 <img src= "{{post.image}}" alt='picture' height="120px" width="150">
@@ -86,7 +86,7 @@
 
                 <!-- comments -->
                 <div style="width:500px; height:75px; overflow: auto;" class="comment-section" ng-show="comments">
-                    <p ng-repeat="comment in post.comments">{{comment.name}}: &nbsp;{{comment.comment}}</p>
+                    <p class="item" ngAnimate ng-repeat="comment in post.comments">{{comment.name}}: &nbsp;{{comment.comment}}</p>
                 </div>
 
                 <!-- comments form -->
@@ -118,9 +118,10 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src='js/animate.js'></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src = "https://"></script>
     <script type="text/javascript" src="js/moment.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
