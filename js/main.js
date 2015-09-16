@@ -130,7 +130,12 @@ app.controller("reddit", function($scope){
       image: 'img/fortcollins.jpg',
       date: 1442705903000,
       votes: 3,
-      comments: []
+      comments: [
+        {
+          name: "Kevin",
+          comment: "Fort Collins has the best beer!"
+        }
+      ]
     },
     {
       title: "Vermont",
@@ -148,7 +153,16 @@ app.controller("reddit", function($scope){
       image: 'img/NYC.jpg',
       date: 1442000103000,
       votes: -1,
-      comments: []
+      comments: [
+        {
+          name: "Tracey",
+          comment: "Great post!"
+        },
+        {
+          name: "Marcus",
+          comment: "People from NY are so rude."
+        }
+      ]
     }
   ];
 
@@ -168,10 +182,28 @@ app.controller("reddit", function($scope){
     }
   };
 
-  $scope.sort = "-votes"
+  $scope.sort = "-votes";
   // $scope.options = ['title', 'votes', 'date'];
 
+  $scope.addComment = function(commentName, commentBody, title){
+
+    var newComment = {
+      name: commentName,
+      comment: commentBody
+    };
+    console.log(newComment);
+
+    for (var i = 0; i < $scope.posts.length; i++) {
+      if($scope.posts[i].title === title){
+        index = i;
+        $scope.posts[i].comments.push(newComment);
+      }
+      console.log($scope.posts[i]);
+    }
+  };
+
 });
+
 
 
 

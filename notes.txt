@@ -5,3 +5,11 @@
 + $scope = binds values/variables to the view.
 + SETTING/GETTING an angular module = angular code lives in the view/model
 + CREATING a controller = defines what gets bound to the view via $scope.
+
+++To include things like the card images you need to include the following at the end of the body :
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-sanitize.js"></script>
+
+  THEN, at the top in the [], include "ngSanitize"
+
+  THEN use ng-bind-html with the ng-repeat.  This works with html stuff (can include '<h1>HI</h1>')
+
